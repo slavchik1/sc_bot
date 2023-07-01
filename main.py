@@ -1,3 +1,5 @@
+import logging
+
 import telebot
 import discord
 from discord.ext import commands
@@ -5,8 +7,9 @@ from multiprocessing import Process
 import config
 import texts
 
-
+telebot.logger.setLevel(logging.DEBUG)
 tg = telebot.TeleBot(config.tgTOKEN)
+
 intents = discord.Intents.default()
 intents.message_content = True
 ds = commands.Bot(command_prefix="/", intents=intents)
