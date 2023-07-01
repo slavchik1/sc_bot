@@ -1,116 +1,98 @@
 import telebot
 import discord
 from discord.ext import commands
+from multiprocessing import Process
+import config
+import texts
 
+
+tg = telebot.TeleBot(config.tgTOKEN)
 intents = discord.Intents.default()
 intents.message_content = True
 ds = commands.Bot(command_prefix="/", intents=intents)
 
-@ds.command()
-async def ping(ctx):
-    await ctx.send('pong')
-
-
-ds.run("******")
-tg = telebot.TeleBot("*****")
-
 
 @tg.message_handler(commands=["start"])
 def start(message):
-    tg.send_message(message.chat.id, "Slavcraft бот ввімкнений. Для допомоги у боті напишіть /help.")
+    tg.send_message(message.chat.id, texts.start_)
+
+@ds.command()
+async def start(ctx):
+    await ctx.send(texts.start__)
 
 
 @tg.message_handler(commands=["help"])
 def start(message):
-    tg.send_message(message.chat.id, """/start – уввімкнути бота.
-/help – допомога у боті.
-/about – інформація про бота.
-/credits – творці бота.
-/rules – правила Славкрафту.
-/ip – ip Славкрафту.
-/members. – лист усіх учасників СК.""")
+    tg.send_message(message.chat.id, texts.help_)
+
+@ds.command()
+async def help_(ctx):
+    await ctx.send(texts.help__)
 
 
 @tg.message_handler(commands=["about"])
 def start(message):
-    tg.send_message(message.chat.id, "Цей бот того шоб у учасників Славкрафту був швидкий доступ до інформації.")
+    tg.send_message(message.chat.id, texts.about_)
+
+@ds.command()
+async def about(ctx):
+    await ctx.send(texts.about_)
 
 
 @tg.message_handler(commands=["credits"])
 def start(message):
-    tg.send_message(message.chat.id, "Цей бот створений slavchik'ом.")
+    tg.send_message(message.chat.id, texts.credits_)
+
+@ds.command()
+async def credits(ctx):
+    await ctx.send(texts.credits_)
 
 
 @tg.message_handler(commands=["rules"])
 def start(message):
-    tg.send_message(message.chat.id, """Правила Славкрафту:
+    tg.send_message(message.chat.id, texts.rules_)
 
-
-загальні
-
-1. Неможно ображати.
-2. Неможно спамити.
-3. Неможно добавляти гравців в групу у Телеграмі чи сервер у Діскорді та на сервер у Майнкрафті без дозволу slavchik.
-4. Запрещена проросійська діяльність.
-5. Запрещена комуністична діяльність.
-6. Запрещена нацистская/фашистская діяльність.
-7. Ваш RP ні повинен нікому заважати.
-
-Майнкрафт
-
-1. Неможно гриферити.
-2. Неможно красти.
-3. Неможно будувати лаг машини.
-4. Неможно пвпшиться без дозволу всіх участников пвп.
-5. Не чятрепортети інших гравців.
-
-creative-21
-
-1. 25 блоків від спавна у звичайному світі не можуть нікому належати.
-1. 25 блоків від координат 0, 0 у звичайному світі не можуть нікому належати.
-3. 25 блоків від координат 0, 0 у пеклі не можуть нікому належати.
-4. 25 блоків від координат 0, 0 в ендер світі не можуть нікому належати.
-5. 25 блоків від обсідеаневої платформи де ми спавнемося у ендер світі не можуть нікому належати.
-
-creative-18
-1. 25 блоків від спавна у звичайному світі не можуть нікому належати.
-2. 25 блоків від координат 0, 0 у звичайному світі не можуть нікому належати.
-3. 25 блоків від координат 0, 0 у пеклі не можуть нікому належати.
-4. 250 блоків від координат 0, 0 в ендер світі не можуть нікому належати.
-
-Slavcraft 4
-
-1. 25 блоків від спавна у звичайному світі не можуть нікому належати.
-2. 25 блоків від координат 0, 0 у звичайному світі не можуть нікому належати.
-3. 25 блоків від координат 0, 0 у пеклі не можуть нікому належати.
-4. 250 блоків від координат 0, 0 в ендер світі не можуть нікому належати.
-5. яйцо дракона не може нікому належати.""")
+@ds.command()
+async def rules(ctx):
+    await ctx.send(texts.rules_)
 
 
 @tg.message_handler(commands=["ip"])
 def start(message):
-    tg.send_message(message.chat.id, """IP Славкрафту:
+    tg.send_message(message.chat.id, texts.ip_)
 
-Лоббі: slavcraft.somerandom.xyz
-creative-21: slavcraft.somerandom.xyz:25566
-creative-18: slavcraft.somerandom.xyz:25567""")
+@ds.command()
+async def ip(ctx):
+    await ctx.send(texts.ip_)
 
 
 @tg.message_handler(commands=["members"])
 def start(message):
-    tg.send_message(message.chat.id, """Лист всіх учасників Славкрафту:
+    tg.send_message(message.chat.id, texts.members_)
 
-1. slavchik
-2. TEBSS
-3. Savalio
-4. salad_1939
-5. MarkoAntonio11
-6. joker497535
-7. NancyCat1
-8. 11_ArtemPR_22
-9. Pla3ma
-10. BLANK_est
-11. Rich_The_Dog""")
+@ds.command()
+async def members(ctx):
+    await ctx.send(texts.members_)
 
 
-tg.polling(none_stop=True)
+def start_tg():
+    print("starting TG")
+    tg.polling(none_stop=True)
+
+
+def start_ds():
+    print("starting DS")
+    ds.run(config.dsTOKEN)
+
+
+if __name__ == "__main__":
+    print("starting bots")
+
+    process_tg = Process(target=start_tg())
+    process_ds = Process(target=start_ds())
+
+    process_tg.start()
+    process_ds.start()
+
+    process_tg.join()
+    process_ds.join()
