@@ -88,8 +88,8 @@ def start_ds():
 if __name__ == "__main__":
     print("starting bots")
 
-    process_tg = Process(target=start_tg())
-    process_ds = Process(target=start_ds())
+    process_tg = Process(target=start_tg)
+    process_ds = Process(target=start_ds)
 
     process_tg.start()
     process_ds.start()
