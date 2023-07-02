@@ -1,6 +1,7 @@
 import telebot                                          #importing
 import discord
 import logging
+import multiprocessing
 from discord.ext import commands
 from multiprocessing import Process
 import config
@@ -95,6 +96,9 @@ def start_ds():
 
 
 if __name__ == "__main__":                          #starting_bots
+
+    multiprocessing.set_start_method("spawn")
+
     process_tg = Process(target=start_tg)
     process_ds = Process(target=start_ds)
 
