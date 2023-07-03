@@ -62,7 +62,7 @@ ip_ = ("""IP Славкрафту:
 creative-21: slavcraft.somerandom.xyz:25566
 creative-18: slavcraft.somerandom.xyz:25567""")
 
-members_ = ("""Лист всіх учасників Славкрафту:
+members_ = ("""Перелік всіх учасників Славкрафту:
 
 1. slavchik
 2. TEBSS
@@ -78,4 +78,4 @@ members_ = ("""Лист всіх учасників Славкрафту:
 12. YourLocalFurry0
 13. bear0re0""")
 
-version_ = ("Версія цього бота: 0.1.2")
+version_ = ("Версія цього бота: 0.1.3")
