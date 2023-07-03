@@ -13,6 +13,7 @@ tg = telebot.TeleBot(config.tgTOKEN)
 intents = discord.Intents.default()
 intents.message_content = True
 ds = commands.Bot(command_prefix="/", intents=intents)
+ds.remove_command("help")
 
 
 @tg.message_handler(commands=["start"])                 #Discord and Telegram commands
@@ -21,7 +22,7 @@ def start(message):
 
 @ds.command()
 async def start(ctx):
-    await ctx.send(texts.start__)
+    await ctx.send(texts.start_)
 
 
 @tg.message_handler(commands=["help"])
@@ -29,8 +30,8 @@ def start(message):
     tg.send_message(message.chat.id, texts.help_)
 
 @ds.command()
-async def help_(ctx):
-    await ctx.send(texts.help__)
+async def help(ctx):
+    await ctx.send(texts.help_)
 
 
 @tg.message_handler(commands=["about"])
