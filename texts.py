@@ -85,6 +85,8 @@ members_ = ("""Лист всіх учасників Славкрафту:
 8. 11_ArtemPR_22
 9. Pla3ma
 10. BLANK_est
-11. Rich_The_Dog""")
+11. Rich_The_Dog
+12. YourLocalFurry0
+13. bear0re0""")
 
-version_ = ("Версія цього бота: 0.1")
+version_ = ("Версія цього бота: 0.1.1")
