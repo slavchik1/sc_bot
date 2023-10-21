@@ -61,7 +61,7 @@ members_ = ("""Перелік всіх учасників Славкрафту:
 1. slavchik
 2. TEBSS
 3. Savalio
-4. salad134437
+4. salad28
 5. MarkoAntonio11
 6. joker497535
 7. NancyCat1
@@ -73,4 +73,4 @@ members_ = ("""Перелік всіх учасників Славкрафту:
 13. bear0re0
 14. WonderAir165649""")
 
-version_ = ("Версія цього бота: 0.1.17")
+version_ = ("Версія цього бота: 0.1.18")
