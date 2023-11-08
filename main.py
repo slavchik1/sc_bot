@@ -96,7 +96,7 @@ def start_ds():
     ds.run(config.dsTOKEN)
 
 
-if __name__ == "__main__":                          #starting_bots
+if __name__ == "__main__":                          #starting bots
 
     multiprocessing.set_start_method("spawn")
 

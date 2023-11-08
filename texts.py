@@ -51,7 +51,7 @@ experiment-701
 
 ip_ = ("""IP Славкрафту:
 
-experement-21: slavcraft.somerandom.xyz
+experement-701: slavcraft.somerandom.xyz
 creative-22: slavcraft.somerandom.xyz:25566
 creative-18: slavcraft.somerandom.xyz:25567""")
 
@@ -72,4 +72,4 @@ members_ = ("""Перелік всіх учасників Славкрафту:
 13. bear0re0
 14. WonderAir165649""")
 
-version_ = ("Версія бота: 0.1.23")
+version_ = ("Версія бота: 0.1.24")
