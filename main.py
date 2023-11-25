@@ -132,21 +132,28 @@ async def version(ctx):
     await ctx.send(text_messages.version)
 
 
+
 @tg.message_handler(commands=["flag"])
 def start(message):
-    tg.send_photo(message.chat.id, other_messages.tg_flag)
+    with open("images/flag.png", "rb") as photo:
+        tg.send_message(message.chat.id, text_messages.flag)
+        tg.send_photo(message.chat.id, photo)
 
 @ds.command()
 async def flag(ctx):
+    await ctx.send(text_messages.flag)
     await ctx.send(other_messages.ds_flag)
 
 
 @tg.message_handler(commands=["flag_original"])
 def start(message):
-    tg.send_document(message.chat.id, other_messages.tg_flag_original)
+    with open("images/server-icon.png", "rb") as doc:
+        tg.send_message(message.chat.id, text_messages.flag_original)
+        tg.send_document(message.chat.id, doc)
 
 @ds.command()
 async def flag_original(ctx):
+    await ctx.send(text_messages.flag_original)
     await ctx.send(other_messages.ds_flag_original)
 
 
