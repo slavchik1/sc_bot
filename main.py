@@ -101,7 +101,7 @@ def start_ds():
         try:
             ds.run(config.dsTOKEN)
         except Exception as e:
-            print("ds R.I.P." + e)
+            print("ds R.I.P.:" + e)
 
 
 if __name__ == "__main__":                          #starting bots
