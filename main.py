@@ -89,11 +89,19 @@ async def version(ctx):
 
 
 def start_tg():                                     #starting functions
-    tg.polling(non_stop=True)
+    while True:
+        try:
+            tg.polling(non_stop=True)
+        except Exception as e:
+            print("tg R.I.P.: " + e)
 
 
 def start_ds():
-    ds.run(config.dsTOKEN)
+    while True:
+        try:
+            ds.run(config.dsTOKEN)
+        except  Exception as e
+            print("ds R.I.P." + e)
 
 
 if __name__ == "__main__":                          #starting bots
