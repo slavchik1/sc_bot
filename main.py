@@ -1,4 +1,4 @@
-import telebot                                          #importing libraryes
+import telebot                                          #importing libraries
 import discord
 import logging
 import multiprocessing
@@ -25,6 +25,7 @@ async def start(ctx):
     await ctx.send(texts.start)
 
 
+
 @tg.message_handler(commands = ["help"])
 def start(message):
     tg.send_message(message.chat.id, texts.help)
@@ -32,6 +33,25 @@ def start(message):
 @ds.command()
 async def help(ctx):
     await ctx.send(texts.help)
+
+
+@tg.message_handler(commands = ["help_help"])
+def start(message):
+    tg.send_message(message.chat.id, texts.help_help)
+
+@ds.command()
+async def help_help(ctx):
+    await ctx.send(texts.help_help)
+
+
+@tg.message_handler(commands = ["help_ip"])
+def start(message):
+    tg.send_message(message.chat.id, texts.help_ip)
+
+@ds.command()
+async def help_ip(ctx):
+    await ctx.send(texts.help_ip)
+
 
 
 @tg.message_handler(commands = ["about"])
@@ -43,6 +63,7 @@ async def about(ctx):
     await ctx.send(texts.about)
 
 
+
 @tg.message_handler(commands = ["credits"])
 def start(message):
     tg.send_message(message.chat.id, texts.credits)
@@ -50,6 +71,7 @@ def start(message):
 @ds.command()
 async def credits(ctx):
     await ctx.send(texts.credits)
+
 
 
 @tg.message_handler(commands = ["rules"])
@@ -61,6 +83,7 @@ async def rules(ctx):
     await ctx.send(texts.rules)
 
 
+
 @tg.message_handler(commands = ["ip"])
 def start(message):
     tg.send_message(message.chat.id, texts.ip)
@@ -70,6 +93,16 @@ async def ip(ctx):
     await ctx.send(texts.ip)
 
 
+@tg.message_handler(commands = ["ip_ip"])
+def start(message):
+    tg.send_message(message.chat.id, texts.ip_ip)
+
+@ds.command()
+async def ip_ip(ctx):
+    await ctx.send(texts.ip_ip)
+
+
+
 @tg.message_handler(commands = ["members"])
 def start(message):
     tg.send_message(message.chat.id, texts.members)
@@ -77,6 +110,7 @@ def start(message):
 @ds.command()
 async def members(ctx):
     await ctx.send(texts.members)
+
 
 
 @tg.message_handler(commands = ["version"])
