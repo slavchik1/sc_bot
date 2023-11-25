@@ -143,7 +143,7 @@ async def flag(ctx):
 
 @tg.message_handler(commands=["flag_original"])
 def start(message):
-    tg.send_message(message.chat.id, other_messages.tg_flag_original)
+    tg.send_document(message.chat.id, other_messages.tg_flag_original)
 
 @ds.command()
 async def flag_original(ctx):
