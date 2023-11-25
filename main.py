@@ -5,127 +5,155 @@ import multiprocessing
 from discord.ext import commands
 from multiprocessing import Process
 import config
-import texts
+import text_messages
+import other_messages
 
 
 telebot.logger.setLevel(logging.DEBUG)                  #settings
 tg = telebot.TeleBot(config.tgTOKEN)
 intents = discord.Intents.default()
 intents.message_content = True
-ds = commands.Bot(command_prefix = "/", intents = intents)
+ds = commands.Bot(command_prefix="/", intents=intents)
 ds.remove_command("help")
 
 
-@tg.message_handler(commands = ["start"])                 #Discord and Telegram commands
+@tg.message_handler(commands=["start"])                 #Discord and Telegram commands
 def start(message):
-    tg.send_message(message.chat.id, texts.start)
+    tg.send_message(message.chat.id, text_messages.start)
 
 @ds.command()
 async def start(ctx):
-    await ctx.send(texts.start)
+    await ctx.send(text_messages.start)
 
 
 
-@tg.message_handler(commands = ["help"])
+@tg.message_handler(commands=["help"])
 def start(message):
-    tg.send_message(message.chat.id, texts.help)
+    tg.send_message(message.chat.id, text_messages.help)
 
 @ds.command()
 async def help(ctx):
-    await ctx.send(texts.help)
+    await ctx.send(text_messages.help)
 
 
-@tg.message_handler(commands = ["help_help"])
+@tg.message_handler(commands=["help_help"])
 def start(message):
-    tg.send_message(message.chat.id, texts.help_help)
+    tg.send_message(message.chat.id, text_messages.help_help)
 
 @ds.command()
 async def help_help(ctx):
-    await ctx.send(texts.help_help)
+    await ctx.send(text_messages.help_help)
 
 
-@tg.message_handler(commands = ["help_ip"])
+@tg.message_handler(commands=["help_ip"])
 def start(message):
-    tg.send_message(message.chat.id, texts.help_ip)
+    tg.send_message(message.chat.id, text_messages.help_ip)
 
 @ds.command()
 async def help_ip(ctx):
-    await ctx.send(texts.help_ip)
+    await ctx.send(text_messages.help_ip)
 
 
-
-@tg.message_handler(commands = ["about"])
+@tg.message_handler(commands=["help_flag"])
 def start(message):
-    tg.send_message(message.chat.id, texts.about)
+    tg.send_message(message.chat.id, text_messages.help_flag)
+
+@ds.command()
+async def help_flag(ctx):
+    await ctx.send(text_messages.help_flag)
+
+
+
+@tg.message_handler(commands=["about"])
+def start(message):
+    tg.send_message(message.chat.id, text_messages.about)
 
 @ds.command()
 async def about(ctx):
-    await ctx.send(texts.about)
+    await ctx.send(text_messages.about)
 
 
 
-@tg.message_handler(commands = ["credits"])
+@tg.message_handler(commands=["credits"])
 def start(message):
-    tg.send_message(message.chat.id, texts.credits)
+    tg.send_message(message.chat.id, text_messages.credits)
 
 @ds.command()
 async def credits(ctx):
-    await ctx.send(texts.credits)
+    await ctx.send(text_messages.credits)
 
 
 
-@tg.message_handler(commands = ["rules"])
+@tg.message_handler(commands=["rules"])
 def start(message):
-    tg.send_message(message.chat.id, texts.rules)
+    tg.send_message(message.chat.id, text_messages.rules)
 
 @ds.command()
 async def rules(ctx):
-    await ctx.send(texts.rules)
+    await ctx.send(text_messages.rules)
 
 
 
-@tg.message_handler(commands = ["ip"])
+@tg.message_handler(commands=["ip"])
 def start(message):
-    tg.send_message(message.chat.id, texts.ip)
+    tg.send_message(message.chat.id, text_messages.ip)
 
 @ds.command()
 async def ip(ctx):
-    await ctx.send(texts.ip)
+    await ctx.send(text_messages.ip)
 
 
-@tg.message_handler(commands = ["ip_ip"])
+@tg.message_handler(commands=["ip_ip"])
 def start(message):
-    tg.send_message(message.chat.id, texts.ip_ip)
+    tg.send_message(message.chat.id, text_messages.ip_ip)
 
 @ds.command()
 async def ip_ip(ctx):
-    await ctx.send(texts.ip_ip)
+    await ctx.send(text_messages.ip_ip)
 
 
 
-@tg.message_handler(commands = ["members"])
+@tg.message_handler(commands=["members"])
 def start(message):
-    tg.send_message(message.chat.id, texts.members)
+    tg.send_message(message.chat.id, text_messages.members)
 
 @ds.command()
 async def members(ctx):
-    await ctx.send(texts.members)
+    await ctx.send(text_messages.members)
 
 
 
-@tg.message_handler(commands = ["version"])
+@tg.message_handler(commands=["version"])
 def start(message):
-    tg.send_message(message.chat.id, texts.version)
+    tg.send_message(message.chat.id, text_messages.version)
 
 @ds.command()
 async def version(ctx):
-    await ctx.send(texts.version)
+    await ctx.send(text_messages.version)
+
+
+@tg.message_handler(commands=["flag"])
+def start(message):
+    tg.send_message(message.chat.id, other_messages.tg_flag)
+
+@ds.command()
+async def flag(ctx):
+    await ctx.send(other_messages.ds_flag)
+
+
+@tg.message_handler(commands=["flag_original"])
+def start(message):
+    tg.send_message(message.chat.id, other_messages.tg_flag_original)
+
+@ds.command()
+async def flag_original(ctx):
+    await ctx.send(other_messages.ds_flag_original)
 
 
 def start_tg():                                     #starting functions
     while True:
         try:
-            tg.polling(non_stop = True)
+            tg.polling(non_stop=True)
         except Exception as e:
             print("tg R.I.P.: " + e)
 
@@ -142,8 +170,8 @@ if __name__ == "__main__":                          #starting bots
 
     multiprocessing.set_start_method("spawn")
 
-    process_tg = Process(target = start_tg)
-    process_ds = Process(target = start_ds)
+    process_tg = Process(target=start_tg)
+    process_ds = Process(target=start_ds)
 
     process_tg.start()
     process_ds.start()
