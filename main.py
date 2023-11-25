@@ -134,7 +134,7 @@ async def version(ctx):
 
 @tg.message_handler(commands=["flag"])
 def start(message):
-    tg.send_message(message.chat.id, other_messages.tg_flag)
+    tg.send_photo(message.chat.id, other_messages.tg_flag)
 
 @ds.command()
 async def flag(ctx):
