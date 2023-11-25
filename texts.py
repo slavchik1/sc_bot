@@ -71,13 +71,13 @@ experiment-701
 5.4. Яйцо дракона не може нікому належати."""
 
 
-ip = """ip Славкрафту:
+ip = """Ip Славкрафту:
 
 experement-701: slavcraft.somerandom.xyz
 creative-22: slavcraft.somerandom.xyz:25566
 creative-18: slavcraft.somerandom.xyz:25567"""
 
-ip_ip = """ip Славкрафту як ip:
+ip_ip = """Ip Славкрафту як ip:
 
 experement-701: 141.95.73.17 
 creative-22: 141.95.73.17:25566
