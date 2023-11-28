@@ -162,7 +162,7 @@ def start_tg():                                     #starting functions
         try:
             tg.polling(non_stop=True)
         except Exception as e:
-            print("tg R.I.P.: " + e)
+            print("tg R.I.P.: " + str(e))
 
 
 def start_ds():
@@ -170,7 +170,7 @@ def start_ds():
         try:
             ds.run(config.dsTOKEN)
         except Exception as e:
-            print("ds R.I.P.:" + e)
+            print("ds R.I.P.:" + str(e))
 
 
 if __name__ == "__main__":                          #starting bots
