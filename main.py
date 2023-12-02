@@ -1,12 +1,12 @@
-import telebot                                          #importing libraries
+import telebot                                          #importing libraries and other python files
 import discord
 import logging
 import multiprocessing
 from discord.ext import commands
 from multiprocessing import Process
 import config
-import text_messages
-import other_messages
+from other_python_files import text_messages
+from other_python_files import other_messages
 
 
 telebot.logger.setLevel(logging.DEBUG)                  #settings
@@ -135,9 +135,8 @@ async def version(ctx):
 
 @tg.message_handler(commands=["flag"])
 def start(message):
-    with open("images/flag.png", "rb") as photo:
-        tg.send_message(message.chat.id, text_messages.flag)
-        tg.send_photo(message.chat.id, photo)
+    tg.send_message(message.chat.id, text_messages.flag)
+    tg.send_photo(message.chat.id, open("images/flag.png", "rb"))
 
 @ds.command()
 async def flag(ctx):
@@ -147,9 +146,8 @@ async def flag(ctx):
 
 @tg.message_handler(commands=["flag_original"])
 def start(message):
-    with open("images/server-icon.png", "rb") as doc:
-        tg.send_message(message.chat.id, text_messages.flag_original)
-        tg.send_document(message.chat.id, doc)
+    tg.send_message(message.chat.id, text_messages.flag_original)
+    tg.send_document(message.chat.id, open("images/server-icon.png", "rb"))
 
 @ds.command()
 async def flag_original(ctx):
