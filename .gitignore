@@ -1,5 +1,3 @@
-.idea
 venv
 __pycache__/
-config.py
-.DS_store
+config_files/private_config.py

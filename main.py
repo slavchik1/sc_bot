@@ -4,9 +4,9 @@ import logging
 import multiprocessing
 from discord.ext import commands
 from multiprocessing import Process
-import config
-from other_python_files import text_messages
-from other_python_files import other_messages
+from config_files import priv
+from python_files import text_messages
+from python_files import other_messages
 
 
 telebot.logger.setLevel(logging.DEBUG)                  #settings
