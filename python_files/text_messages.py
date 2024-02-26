@@ -1,9 +1,4 @@
-quotation_mark = '"'                                                        #quotation mark variable for some message variables
-
-
-
-
-start = "Slavcraft bot ввімкнений. Для допомоги у боті напишіть /help."     #message variables
+start = "Slavcraft bot ввімкнений. Для допомоги у боті напишіть /help."
 
 help = """/start - уввімкнути бота.
 /help - допомога у боті.
@@ -115,7 +110,7 @@ members = """Перелік всіх учасників Славкрафту:
 13. bear0re0
 14. WonderAir165649"""
 
-members_slavchik = f"Один з засновник Славкрафту, головний адмін СК. Грає у Minecraft, Kerbal Space Program, Oxygen Not Included, Portal 2, Garry's mod та браузерні ігри. Не грає у Roblox, Genshin Impact. Пройшов Minecraft, Portal, Portal 2, Portal 2 coop, Aprture Tag: The Paint Gun Testing Initiative, Half-life, Half-life 2, Half life 2: Lost Coast, Half life 2: Episode One, Half life 2: Episode Two, Subnautica. Созасновник телеграм каналу {quotation_mark}Меми та й не тільки!{quotation_mark}. Засновник та головний адмін телеграм групи Союз Minecraft. Має телеграм канал: Приключения Славы (https://t.me/@Priklyucheniya_Slavy) та ютуб канал: Приключения Славы (https://youtube.com/@Priklyucheniya_Slavy). Нікнейм у майнкрафті: slavchik. Телеграм псевдонім @Ukranianball. Діскорд ім'я: slavchik__."
+members_slavchik = """Один з засновник Славкрафту, головний адмін СК. Грає у Minecraft, Kerbal Space Program, Oxygen Not Included, Portal 2, Garry's mod та браузерні ігри. Не грає у Roblox, Genshin Impact. Пройшов Minecraft, Portal, Portal 2, Portal 2 coop, Aprture Tag: The Paint Gun Testing Initiative, Half-life, Half-life 2, Half life 2: Lost Coast, Half life 2: Episode One, Half life 2: Episode Two, Subnautica. Созасновник телеграм каналу "Меми та й не тільки!". Засновник та головний адмін телеграм групи Союз Minecraft. Має телеграм канал: Приключения Славы (https://t.me/@Priklyucheniya_Slavy) та ютуб канал: Приключения Славы (https://youtube.com/@Priklyucheniya_Slavy). Нікнейм у майнкрафті: slavchik. Телеграм псевдонім @Ukranianball. Діскорд ім'я: slavchik__."""
 
 members_TEBSS = None
 
