@@ -1,4 +1,4 @@
-import telebot                                          #importing libraries and other python files
+import telebot                                          #importing
 import discord
 import logging
 import multiprocessing

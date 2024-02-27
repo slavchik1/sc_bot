@@ -1,6 +1,13 @@
-start = "Slavcraft bot ввімкнений. Для допомоги у боті напишіть /help."
+import timeinkyiv_getter                                                    #importing
 
-help = """/start - уввімкнути бота.
+
+
+
+start = "Slavcraft bot ввімкнений. Для допомоги у боті напишіть /help."     #texts
+
+help = """Команди у боті:
+
+/start - уввімкнути бота.
 /help - допомога у боті.
 /about - інформація про бота.
 /credits - творці бота.
@@ -9,9 +16,10 @@ help = """/start - уввімкнути бота.
 /members - лист усіх учасників СК.
 /version - версія боту.
 /flag - прапор Славкрафту.
+/timeinkyiv - час у Києві.
 
 
-Також у деяких команд є підкоманди. Для допомоги с підкомандами напишіть /help_<назва команди>. Список команд у яких є підкоманди: /help, /ip, /flag, /members"""
+Також у деяких команд є підкоманди. Для допомоги с підкомандами напишіть /help_<назва команди>. Список команд у яких є підкоманди: /help, /ip, /flag, /members, /timeinkyiv"""
 
 help_help = """Підкоманди команди /help:
 
@@ -36,6 +44,10 @@ help_members = """Для того щоб вийшла підкоманда /memb
 /members_mr_bacoun - опис гравця mr_bacoun
 /members_bear0re0 -  - опис гравця bear0re
 """
+
+help_timeinkyiv = """Підкоманди команди /timeinkyiv
+
+/timeinkyiv_withseconds - час у Києві з точністю до секунд."""
 
 
 about = "Цей бот того шоб у учасників Славкрафту був швидкий доступ до інформації."
@@ -145,3 +157,8 @@ version = "Версія бота: розробка 0.2"
 flag = "Прапор Славкафту:"
 
 flag_original = "Орігінальний прапор Славкрафту (іконка сервера):"
+
+
+timeinkyiv = f"Час у києві {timeinkyiv_getter.get_hours()}:{timeinkyiv_getter.get_minutes()}."
+
+timeinkyiv_seconds = f"Час у києві {timeinkyiv_getter.get_hours()}:{timeinkyiv_getter.get_minutes()}:{timeinkyiv_getter.get_seconds()}."
