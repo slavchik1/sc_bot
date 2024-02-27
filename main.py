@@ -4,6 +4,7 @@ import logging
 import multiprocessing
 from discord.ext import commands
 from multiprocessing import Process
+import private_config as config
 from python_files import *
 
 
