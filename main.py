@@ -4,11 +4,10 @@ import logging
 import multiprocessing
 from discord.ext import commands
 from multiprocessing import Process
-from config_files import *
 from python_files import *
 
 
-telebot.logger.setLevel(logging.DEBUG)                  #settings
+telebot.logger.setLevel(logging.DEBUG)                  #defeult settings
 tg = telebot.TeleBot(config.tgTOKEN)
 intents = discord.Intents.default()
 intents.message_content = True
