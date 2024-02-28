@@ -159,6 +159,8 @@ flag = "Прапор Славкафту:"
 flag_original = "Орігінальний прапор Славкрафту (іконка сервера):"
 
 
-timeinkyiv = f"Час у Києві {timeinkyiv_getter.get_time()['h']}:{timeinkyiv_getter.get_time()['m']}."
+def timeinkyiv():
+    return f"Час у Києві {timeinkyiv_getter.get_time()['h']}:{timeinkyiv_getter.get_time()['m']}."
 
-timeinkyiv_seconds = f"Час у Києві {timeinkyiv_getter.get_time()['h']}:{timeinkyiv_getter.get_time()['m']}:{timeinkyiv_getter.time()['s']}."
+def timeinkyiv_seconds():
+    return f"Час у Києві {timeinkyiv_getter.get_time()['h']}:{timeinkyiv_getter.get_time()['m']}:{timeinkyiv_getter.time()['s']}."
