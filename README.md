@@ -15,4 +15,4 @@ dsTOKEN = "<Discord token>"
 ```
 ### data
 
-Data is a folder that has files money.json, day, program edits this files and you need to just create this files in data folder.
+Data is a folder that has files money_main.json, money_helper.json, program edits this files and you need to just create this files in data folder.
