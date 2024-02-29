@@ -114,7 +114,7 @@ members = """Перелік всіх учасників Славкрафту:
 5. MarkoAntonio11
 6. joker497535
 7. NancyCat1
-8. 11_ArtemPR_22
+8. 11_ArtemPR_22(zvo9 до 7-ого березня через взлом)
 9. Pla3ma
 10. mr_bacoun
 11. Matviy_krpk
