@@ -1,4 +1,4 @@
-from timeinkyiv_getter import *                                             #importing
+from .timeinkyiv_getter import *                                             #importing
 
 
 
