@@ -5,6 +5,7 @@ from discord.ext import commands
 from multiprocessing import Process
 from .private_config import *
 from . import text_messages
+from . import other_messages
 
 
 telebot.logger.setLevel(logging.DEBUG)                  #defeult settings
@@ -17,7 +18,7 @@ ds.remove_command("help")
 
 @tg.message_handler(commands=["start"])                 #Discord and Telegram commands
 def start(message):
-    tg.send_message(message.chat.id, python_files.start)
+    tg.send_message(message.chat.id, text_messages.start)
 
 @ds.command()
 async def start(ctx):

@@ -1,14 +1,13 @@
 import multiprocessing                              #importing
-import python_files
+import bot
 
 
 if __name__ == "__main__":                          #starting bots
 
-    print(text_messages.help)
     multiprocessing.set_start_method("spawn")
 
-    process_tg = Process(target=start_tg)
-    process_ds = Process(target=start_ds)
+    process_tg = multiprocessing.Process(target=bot.start_tg)
+    process_ds = multiprocessing.Process(target=bot.start_ds)
 
     process_tg.start()
     process_ds.start()
