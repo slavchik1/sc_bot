@@ -1,10 +1,14 @@
-import requests
+from datetime import datetime
+from datetime import timezone
+import pytz
 
 
 def get_time():
-    time = requests.get("https://timeapi.io/api/Time/current/zone?timeZone=Europe/Kyiv").json()
+    time = datetime.now(timezone.utc).astimezone(pytz.timezone("Europe/Kyiv"))
     return {
-        "h": "{:02d}".format(time["hour"]),
-        "m": "{:02d}".format(time["minute"]),
-        "s": "{:02d}".format(time["seconds"]),
+        "h": "{:02d}".format(time.hour),
+        "m": "{:02d}".format(time.minute),
+        "s": "{:02d}".format(time.second),
     }
+
+print(get_time())

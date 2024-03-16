@@ -154,6 +154,28 @@ async def flag_original(ctx):
     await ctx.send(other_messages.ds_flag_original)
 
 
+
+@tg.message_handler(commands=["timeinkyiv"])
+def start(message):
+    tg.send_message(message.chat.id, text_messages.timeinkyiv())
+
+@ds.command()
+async def timeinkyiv(ctx):
+    await ctx.send(text_messages.timeinkyiv())
+
+
+@tg.message_handler(commands=["timeinkyiv_seconds"])
+def start(message):
+    tg.send_message(message.chat.id, text_messages.timeinkyiv_seconds())
+
+@ds.command()
+async def timeinkyiv_seconds(ctx):
+    await ctx.send(text_messages.timeinkyiv_seconds())
+
+
+
+
+
 def start_tg():                                     #starting functions
     while True:
         try:
