@@ -20,7 +20,7 @@ help = """Команди у боті:
 /money - грошова система.
 
 
-Також у деяких команд є підкоманди. Для допомоги с підкомандами напишіть /help_<назва команди>. Список команд у яких є підкоманди: /help, /ip, /flag, /members, /timeinkyiv"""
+Також у деяких команд є підкоманди. Для допомоги с підкомандами напишіть /help_<назва команди>. Список команд у яких є підкоманди: /help, /ip, /flag, /members"""
 
 help_help = """Підкоманди команди /help:
 
@@ -41,14 +41,9 @@ help_members = """Для того щоб вийшла підкоманда /memb
 /members_slavchik - опис гравця slavchik
 /members_Savalio - опис гравця Savalio
 /members_MarkoAntonio11 - опис гравця MarkoAntonio11
-/members_11_ArtemPR_22 - опис гравця 11_ArtemPR_22
+/members_11_ArtemPR_23 - опис гравця 11_ArtemPR_22
 /members_mr_bacoun - опис гравця mr_bacoun
-/members_bear0re0 -  - опис гравця bear0re
-"""
-
-help_timeinkyiv = """Підкоманди команди /timeinkyiv
-
-/timeinkyiv_withseconds - час у Києві з точністю до секунд."""
+/members_bear0re0 - опис гравця bear0re"""
 
 
 about = "Цей бот того шоб у учасників Славкрафту був швидкий доступ до інформації."
@@ -83,8 +78,9 @@ rules = """Правила Славкрафту:
 Умови для приєднання на СК
 
 3.1. Кандидату повинно бути більше ніж 8 років.
-3.2. Кандитат повинен знати Українську мову та російську мову.
+3.2. Кандитат повинен знати українську мову.
 3.3. Потрібна ліцензія Minecraft Java Edition для приєднання.
+3.4. Потрібно щоб був Telegram чи Discord.
 
 creative-18 та creative-22
 
@@ -115,7 +111,7 @@ members = """Перелік всіх учасників Славкрафту:
 5. MarkoAntonio11
 6. joker497535
 7. NancyCat1
-8. 11_ArtemPR_22(zvo9 до 7-ого березня через взлом)
+8. 11_ArtemPR_23
 9. Pla3ma
 10. mr_bacoun
 11. Matviy_krpk
@@ -123,7 +119,7 @@ members = """Перелік всіх учасників Славкрафту:
 13. bear0re0
 14. WonderAir165649"""
 
-members_slavchik = """Один з засновників Славкрафту, головний адмін СК. Грає у Minecraft, Kerbal Space Program, Oxygen Not Included, Portal 2, Garry's mod та браузерні ігри. Не грає у Roblox, Genshin Impact. Пройшов Minecraft, Portal, Portal 2, Portal 2 coop, Aprture Tag: The Paint Gun Testing Initiative, Portal Stories: Mel, Half-life, Half-life 2, Half life 2: Lost Coast, Half life 2: Episode One, Half life 2: Episode Two, Subnautica. Созасновник телеграм каналу "Меми та й не тільки!". Засновник та головний адмін телеграм групи Союз Minecraft. Має телеграм канал: Приключения Славы (https://t.me/@Priklyucheniya_Slavy) та ютуб канал: Приключения Славы (https://youtube.com/@Priklyucheniya_Slavy). Нікнейм у майнкрафті: slavchik. Телеграм псевдонім @Ukranianball. Діскорд ім'я: slavchik__."""
+members_slavchik = """Один з засновників Славкрафту, головний адмін СК. Грає у Minecraft, Kerbal Space Program, Oxygen Not Included, Portal 2, Garry's mod та браузерні ігри. Не грає у Roblox та Genshin Impact. Пройшов Minecraft, Portal, Portal 2, Portal 2 coop, Aprture Tag: The Paint Gun Testing Initiative, Portal Stories: Mel, Half-life, Half-life 2, Half life 2: Lost Coast, Half life 2: Episode One, Half life 2: Episode Two, Subnautica. Созасновник телеграм каналу "Меми та й не тільки!". Засновник та головний адмін телеграм групи Союз Minecraft. Має телеграм канал: Приключения Славы (https://t.me/@Priklyucheniya_Slavy) та ютуб канал: Приключения Славы (https://youtube.com/@Priklyucheniya_Slavy). Нікнейм у майнкрафті: slavchik. Телеграм псевдонім @Ukranianball. Діскорд ім'я: slavchik__."""
 
 members_TEBSS = None
 
@@ -137,7 +133,7 @@ members_joker497535 = None
 
 members_NancyCat1 = None
 
-members_11_ArtemPR_22 = "Человек вроде обычный, а вроде и нет."
+members_11_ArtemPR_23 = "Человек вроде обычный, а вроде и нет."
 
 members_Pla3ma = None
 

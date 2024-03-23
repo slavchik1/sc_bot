@@ -6,6 +6,8 @@ from multiprocessing import Process
 from .private_config import *
 from . import text_messages
 from . import other_messages
+from . import money_system
+from . import money_system_text_messages
 
 
 telebot.logger.setLevel(logging.DEBUG)                  #defeult settings
@@ -60,6 +62,15 @@ def start(message):
 @ds.command()
 async def help_flag(ctx):
     await ctx.send(text_messages.help_flag)
+
+
+@tg.message_handler(commands=["help_members"])
+def start(message):
+    tg.send_message(message.chat.id, text_messages.help_members)
+
+@ds.command()
+async def help_members(ctx):
+    await ctx.send(text_messages.help_members)
 
 
 
@@ -121,6 +132,60 @@ async def members(ctx):
     await ctx.send(text_messages.members)
 
 
+@tg.message_handler(commands=["members_slavchik"])
+def start(message):
+    tg.send_message(message.chat.id, text_messages.members_slavchik)
+
+@ds.command()
+async def members_slavchik(ctx):
+    await ctx.send(text_messages.members_slavchik)
+
+
+@tg.message_handler(commands=["members_Savalio"])
+def start(message):
+    tg.send_message(message.chat.id, text_messages.members_Savalio)
+
+@ds.command()
+async def members_Savalio(ctx):
+    await ctx.send(text_messages.members_Savalio)
+
+
+@tg.message_handler(commands=["members_MarkoAntonio11"])
+def start(message):
+    tg.send_message(message.chat.id, text_messages.members_MarkoAntonio11)
+
+@ds.command()
+async def members_MarkoAntonio11(ctx):
+    await ctx.send(text_messages.members_MarkoAntonio11)
+
+
+@tg.message_handler(commands=["members_11_ArtemPR_23"])
+def start(message):
+    tg.send_message(message.chat.id, text_messages.members_11_ArtemPR_23)
+
+@ds.command()
+async def members_11_ArtemPR_23(ctx):
+    await ctx.send(text_messages.members_11_ArtemPR_23)
+
+
+@tg.message_handler(commands=["members_mr_bacoun"])
+def start(message):
+    tg.send_message(message.chat.id, text_messages.members_mr_bacoun)
+
+@ds.command()
+async def members_mr_bacoun(ctx):
+    await ctx.send(text_messages.members_mr_bacoun)
+
+
+@tg.message_handler(commands=["members_bear0re0"])
+def start(message):
+    tg.send_message(message.chat.id, text_messages.members_bear0re0)
+
+@ds.command()
+async def members_bear0re0(ctx):
+    await ctx.send(text_messages.members_bear0re0)
+
+
 
 @tg.message_handler(commands=["version"])
 def start(message):
@@ -162,6 +227,26 @@ def start(message):
 @ds.command()
 async def timeinkyiv(ctx):
     await ctx.send(text_messages.timeinkyiv())
+
+
+
+@tg.message_handler(commands=["money"])
+def start(message):
+    tg.send_message(message.chat.id, money_system_text_messages.money)
+
+@ds.command()
+async def money(ctx):
+    await ctx.send(money_system_text_messages.money)
+
+
+@tg.message_handler(commands=["money_register"])
+def start(message):
+    tg.send_message(message.chat.id, money_system_text_messages.money_register("Telegram", message.from_user.id))
+
+@ds.command()
+async def money_register(ctx):
+    id = ctx.author.id
+    await ctx.send(money_system_text_messages.money_register("Discord", id))
 
 
 
