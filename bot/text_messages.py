@@ -161,7 +161,4 @@ flag_original = "Орігінальний прапор Славкрафту (і�
 
 
 def timeinkyiv():
-    return f"Час у Києві: {timeinkyiv_getter.get_time()['h']}:{timeinkyiv_getter.get_time()['m']}."
-
-def timeinkyiv_seconds():
-    return f"Час у Києві: {timeinkyiv_getter.get_time()['h']}:{timeinkyiv_getter.get_time()['m']}:{timeinkyiv_getter.time()['s']}."
+    return f"Час у Києві: {timeinkyiv_getter.get_time()['h']}:{timeinkyiv_getter.get_time()['m']}"
