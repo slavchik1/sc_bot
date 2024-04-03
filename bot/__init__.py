@@ -245,8 +245,47 @@ def start(message):
 
 @ds.command()
 async def money_register(ctx):
-    id = ctx.author.id
-    await ctx.send(money_system_text_messages.money_register("Discord", id))
+    await ctx.send(money_system_text_messages.money_register("Discord", ctx.author.id))
+
+
+@tg.message_handler(commands=["money_give"])
+def start(message):
+    args = message.text.split()
+    args.pop(0)
+    tg.send_message(message.chat.id, money_system.give_money("tg", message.from_user.id, args))
+
+@ds.command()
+async def money_give(ctx, *args):
+    await ctx.send(money_system.give_money("ds", ctx.author.id, args))
+
+
+@tg.message_handler(commands=["money_show_balance"])
+def start(message):
+    args = message.text.split()
+    args.pop(0)
+    tg.send_message(message.chat.id, money_system.show_balance(args, "tg", message.from_user.id))
+
+@ds.command()
+async def money_show_balance(ctx, *args):
+    await ctx.send(money_system.show_balance(args, "ds", ctx.author.id))
+
+
+@tg.message_handler(commands=["money_show_inflationrate"])
+def start(message):
+    tg.send_message(message.chat.id, money_system.show_inflation_rate())
+
+@ds.command()
+async def money_show_inflationrate(ctx):
+    await ctx.send(money_system.show_inflation_rate())
+
+
+@tg.message_handler(commands=["money_show_generalmoneyamount"])
+def start(message):
+    tg.send_message(message.chat.id, money_system.show_general_money_amount())
+
+@ds.command()
+async def money_show_generalmoneyamount(ctx):
+    await ctx.send(money_system.show_general_money_amount())
 
 
 
