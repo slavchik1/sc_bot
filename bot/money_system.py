@@ -86,4 +86,3 @@ def show_general_money_amount():
     for i in main_data:
         general_money_amount += i["balance"]
     return f"Загальна кілкість славкоїнів: {float_to_string(general_money_amount)} слк."
-
