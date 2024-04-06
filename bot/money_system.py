@@ -44,6 +44,8 @@ def give_money(giver_id_type, giver_id, args):
             return "Помилка: Ви не зараєстровані у грошовій системі. Для реєстрації напишіть /money_register."
         elif receiver_index is None:
             return f"Помилка: {args[0]} не зареєстрований у грошовій системі. Впевністся що Ви правильно написали нікнейм гравця та що він відповідає нікнейму з команди /members."
+        elif args[0] == main_data[giver_index]["name"]:
+            return "Помилка: Ви неможите дати гроші собі."
         elif given_money_amount > main_data[giver_index]["balance"]:
             return f"Помилка: не висточає {float_to_string(given_money_amount - main_data[giver_index]['balance'])} слк."
         elif given_money_amount < 0:
@@ -52,9 +54,9 @@ def give_money(giver_id_type, giver_id, args):
             main_data[giver_index]["balance"] -= given_money_amount
             main_data[receiver_index]["balance"] += given_money_amount
             save_changes_to_json(main_data, "data_main.json")
-            return f"Передано {float_to_string(given_money_amount)} слк на баланс {main_data[receiver_index]['name']}. Ваш баланс: {float_to_string(main_data[giver_index]['balance'])}."
+            return f"Передано {float_to_string(given_money_amount)} слк на баланс {main_data[receiver_index]['name']}. Ваш баланс: {float_to_string(main_data[giver_index]['balance'])} слк."
     else:
-        return "Помилка: кількість аргументів повина дорювнювати 2-ом"
+        return "Помилка: кількість аргументів повина дорювнювати 2-ом."
 
 
 def show_balance(args, id_type, id):
