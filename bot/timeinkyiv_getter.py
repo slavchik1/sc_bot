@@ -9,3 +9,6 @@ def get_time():
         "h": "{:02d}".format(time.hour),
         "m": "{:02d}".format(time.minute)
     }
+
+def get_day():
+    return datetime.now(timezone.utc).astimezone(pytz.timezone("Europe/Kyiv")).day

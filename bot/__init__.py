@@ -305,3 +305,8 @@ def start_ds():
             ds.run(dsTOKEN)
         except Exception as e:
             print("ds R.I.P.:" + str(e))
+
+
+def start_in():
+    while True:
+        money_system.do_inflation()

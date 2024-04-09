@@ -1,5 +1,7 @@
 import json                                                               #importing
+import time
 from . import config
+from . import timeinkyiv_getter
 
 
 
@@ -79,6 +81,19 @@ def show_balance(args, id_type, id):
 
 def show_inflation_rate():
     return f"Рівень інфляції: {float_to_string((config.inflation_rate - 1) * 100)}%"
+
+
+def do_inflation():
+    if timeinkyiv_getter.get_day() == helper_data["day"]:
+        print("Not inflated!")
+        time.sleep(config.inflation_checking_delay)
+    else:
+        for i in range(len(main_data)):
+            main_data[i]["balance"] *= config.inflation_rate
+        save_changes_to_json(main_data, "data_main.json")
+        helper_data["default_money_amount"] *= config.inflation_rate
+        save_changes_to_json(helper_data, "data_helper.json")
+        print("Inflated!")
 
 
 def show_general_money_amount():
