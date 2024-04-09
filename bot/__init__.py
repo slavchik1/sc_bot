@@ -309,4 +309,4 @@ def start_ds():
 
 def start_in():
     while True:
-        money_system.do_inflation()
+        money_system.inflate()

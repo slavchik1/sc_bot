@@ -83,7 +83,7 @@ def show_inflation_rate():
     return f"Рівень інфляції: {float_to_string((config.inflation_rate - 1) * 100)}%"
 
 
-def do_inflation():
+def inflate():
     if timeinkyiv_getter.get_day() == helper_data["day"]:
         print("Not inflated!")
         time.sleep(config.inflation_checking_delay)
