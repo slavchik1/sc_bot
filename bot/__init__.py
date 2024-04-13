@@ -8,6 +8,7 @@ from . import text_messages
 from . import other_messages
 from . import money_system
 from . import money_system_text_messages
+from . import helper
 
 
 telebot.logger.setLevel(logging.DEBUG)                  #defeult settings
@@ -250,9 +251,7 @@ async def money_register(ctx):
 
 @tg.message_handler(commands=["money_give"])
 def start(message):
-    args = message.text.split()
-    args.pop(0)
-    tg.send_message(message.chat.id, money_system.give_money("tg", message.from_user.id, args))
+    tg.send_message(message.chat.id, money_system.give_money("tg", message.from_user.id, helper.get_tg_args(message)))
 
 @ds.command()
 async def money_give(ctx, *args):
@@ -261,9 +260,7 @@ async def money_give(ctx, *args):
 
 @tg.message_handler(commands=["money_show_balance"])
 def start(message):
-    args = message.text.split()
-    args.pop(0)
-    tg.send_message(message.chat.id, money_system.show_balance(args, "tg", message.from_user.id))
+    tg.send_message(message.chat.id, money_system.show_balance(helper.get_tg_args(message), "tg", message.from_user.id))
 
 @ds.command()
 async def money_show_balance(ctx, *args):
