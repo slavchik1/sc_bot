@@ -17,10 +17,11 @@ help = """Команди у боті:
 /version - версія боту.
 /flag - прапор Славкрафту.
 /timeinkyiv - час у Києві.
-/money - грошова система.
+/money - грошова система
+/uploadmapart.
 
 
-Також у деяких команд є підкоманди. Для допомоги с підкомандами напишіть /help_<назва команди>. Список команд у яких є підкоманди: /help, /ip, /flag, /members"""
+Також у деяких команд є підкоманди та аргументи. Для допомоги с підкомандами та аргументами напишіть /help_<назва команди>. Список команд у яких є підкоманди чи аргументи: /help, /ip, /flag, /members, /uploadmapart."""
 
 help_help = """Підкоманди команди /help:
 
@@ -44,6 +45,10 @@ help_members = """Для того щоб вийшла підкоманда /memb
 /members_11_ArtemPR_23 - опис гравця 11_ArtemPR_22
 /members_mr_bacoun - опис гравця mr_bacoun
 /members_bear0re0 - опис гравця bear0re"""
+
+help_uploadmapart = """У команди /uploadmapart така структура аргументів:
+
+/uploadmapart <назва світу у який ви хочите загрузити мапарт актуальна для команди /ip>"""
 
 
 about = "Цей бот того шоб у учасників Славкрафту був швидкий доступ до інформації."
@@ -97,14 +102,14 @@ creative-20
 
 ip = """Ip Славкрафту:
 
-experement-701: slavcraft.somerandom.xyz
-creative-22: slavcraft.somerandom.xyz:25566
+creative-20: slavcraft.somerandom.xyz
+?: slavcraft.somerandom.xyz:25566
 creative-18: slavcraft.somerandom.xyz:25567"""
 
 ip_ip = """Ip Славкрафту як ip:
 
-experement-701: 141.95.73.17 
-creative-22: 141.95.73.17:25566
+creative-20: 141.95.73.17 
+?: 141.95.73.17:25566
 creative-18: 141.95.73.17:25567"""
 
 

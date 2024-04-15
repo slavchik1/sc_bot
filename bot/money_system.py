@@ -1,15 +1,30 @@
-import json                                                               #importing
+import json                                                                      #importing
 import time
 from . import config
 from . import timeinkyiv_getter
 
 
 
-main_data = json.load(open("data/data_main.json", "r"))                   #jsons loading
-helper_data = json.load(open("data/data_helper.json", "r"))
+main_data = json.load(open("data/moneysystem_main.json", "r"))                   #jsons loading
+helper_data = json.load(open("data/moneysystem_helper.json", "r"))
+
+                                                                                 #variables
+money = """Вітаю у грошову систему. /money це команда для взаємодій з грошовою системою. /money має багато підкоманд про яки написано нижче:
+
+/money_register - зараєструватися у грошову систему
+/money_give <одержувач> <сума> - дати комусь гроші.
+/money_show_balance <людина баланс якою ви хочите дізнатися(необов'язково)> - дізнатися баланс, якщо не пишете аргумент то ви дізнаєтесь свій баланс.
+/money_show_inflationrate - показати рівень інфляції.
+/money_show_generalmoneyamount - показати загальну кільксть грошей у системі.
+
+Коли ви пишите якусь людину у аргументах команд то потрібно писати її нік у Майнкрафті акуальний для команди /members."""
 
 
-def save_changes_to_json(data, Json):                                     #functions
+def money_register(platform_type, id):                                           #functions
+    return f"Вибачте, але поку у боті нема автоматичної реестрації. Тому для реєстрації будь ласка напишіть головному адніму для ручної реестрації. Для реєстрації потрібно указати ваш телеграм або діскорд id. Ваш {platform_type} id: {id}. Щоб отримати id на іншій платформі напишіть /register на іншій платформі."
+
+
+def save_changes_to_json(data, Json):
     json.dump(data, open(f"data/{Json}", "w"))
 
 
