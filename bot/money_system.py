@@ -5,8 +5,8 @@ from . import timeinkyiv_getter
 
 
 
-main_data = json.load(open("data/moneysystem_main.json", "r"))                   #jsons loading
-helper_data = json.load(open("data/moneysystem_helper.json", "r"))
+main_data = json.load(open("data/data_main.json", "r"))                   #jsons loading
+helper_data = json.load(open("data/data_helper.json", "r"))
 
                                                                                  #variables
 money = """Вітаю у грошову систему. /money це команда для взаємодій з грошовою системою. /money має багато підкоманд про яки написано нижче:
