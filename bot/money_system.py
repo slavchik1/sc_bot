@@ -107,6 +107,7 @@ def inflate():
             main_data[i]["balance"] *= config.inflation_rate
         save_changes_to_json(main_data, "data_main.json")
         helper_data["default_money_amount"] *= config.inflation_rate
+        helper_data["day"] = timeinkyiv_getter.get_day()
         save_changes_to_json(helper_data, "data_helper.json")
         print("Inflated!")
 

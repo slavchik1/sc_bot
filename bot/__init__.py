@@ -17,6 +17,8 @@ intents.message_content = True
 ds = commands.Bot(command_prefix="/", intents=intents)
 ds.remove_command("help")
 
+tg_catch_file = False                                   #some boolean variables
+
 
 @tg.message_handler(commands=["start"])                 #Discord and Telegram commands
 def start(message):
@@ -250,7 +252,7 @@ async def money_register(ctx):
 
 @tg.message_handler(commands=["money_give"])
 def start(message):
-    tg.send_message(message.chat.id, money_system.give_money("tg", message.from_user.id, helper.get_tg_args(message)))
+    tg.send_message(message.chat.id, money_system.give_money("tg", message.from_user.id, helper.tg_get_args(message)))
 
 @ds.command()
 async def money_give(ctx, *args):
@@ -259,7 +261,7 @@ async def money_give(ctx, *args):
 
 @tg.message_handler(commands=["money_show_balance"])
 def start(message):
-    tg.send_message(message.chat.id, money_system.show_balance(helper.get_tg_args(message), "tg", message.from_user.id))
+    tg.send_message(message.chat.id, money_system.show_balance(helper.tg_get_args(message), "tg", message.from_user.id))
 
 @ds.command()
 async def money_show_balance(ctx, *args):
@@ -284,6 +286,22 @@ async def money_show_generalmoneyamount(ctx):
     await ctx.send(money_system.show_general_money_amount())
 
 
+@tg.message_handler(commands=["test"])
+def start(message):
+    tg.send_message(message.chat.id, "Відправте файл.\n")
+    tg_catch_file = True
+
+
+
+
+@tg.message_handler(func=lambda message: True)          #loop funcions
+def loop(message):
+    print("1!")
+    global tg_catch_file
+    if tg_catch_file == True:
+        print("2!")
+        tg.send_message(message.chat.id, message.text)
+        tg_catch_file = False
 
 
 
