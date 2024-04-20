@@ -8,6 +8,7 @@ from . import text_messages
 from . import other_messages
 from . import money_system
 from . import helper
+from . import config
 
 
 telebot.logger.setLevel(logging.DEBUG)                  #defeult settings
@@ -17,7 +18,7 @@ intents.message_content = True
 ds = commands.Bot(command_prefix="/", intents=intents)
 ds.remove_command("help")
 
-tg_catch_file = False                                   #some boolean variables
+tg_catching_files_information = None                    #some variables
 
 
 @tg.message_handler(commands=["start"])                 #Discord and Telegram commands
@@ -288,20 +289,27 @@ async def money_show_generalmoneyamount(ctx):
 
 @tg.message_handler(commands=["test"])
 def start(message):
-    tg.send_message(message.chat.id, "Відправте файл.\n")
-    tg_catch_file = True
+    global tg_catching_files_information
+    args = helper.tg_get_args(message)
+    if len(args) == 1:
+        tg.send_message(message.chat.id, "Відправте файл.\n")
+        tg_catching_files_information = ("test", message.from_user.id, args[0])
+    else:
+        tg.send_message(message.chat.id, "Помилка: кількість аргументів повина бути менше або дорівнювати 1-у.")
 
-
-
-
-@tg.message_handler(func=lambda message: True)          #loop funcions
+                                                         #loop funcion
+@tg.message_handler(content_types=config.all_user_sendable_content_types)
 def loop(message):
-    print("1!")
-    global tg_catch_file
-    if tg_catch_file == True:
-        print("2!")
-        tg.send_message(message.chat.id, message.text)
-        tg_catch_file = False
+    global tg_catching_files_information
+    if tg_catching_files_information[1] == message.from_user.id:
+        if message.content_type == "document":
+            tg.send_message(message.chat.id, "✅")
+            tg_catching_files_information = None
+        elif message.text == "cancel":
+            tg.send_message(message.chat.id, "Відправку файла скасовано.")
+            tg_catching_files_information = None
+        else:
+            tg.send_message(message.chat.id, "Помилка: ваше повідомлення не є файлом, якщо ви хочите відмінити відправку файла то напишіть: cancel.")
 
 
 

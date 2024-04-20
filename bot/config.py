@@ -5,3 +5,4 @@ minecraft_servers_paths = {
     "?": "Users/slavka/Downloads/test1",
     "creative-18": "Users/slavka/Downloads/test2"
 }
+all_user_sendable_content_types = ["text", "audio", "document", "photo", "sticker", "video", "video_note", "voice", "location", "contact"]

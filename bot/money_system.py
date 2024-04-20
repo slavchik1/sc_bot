@@ -91,7 +91,7 @@ def show_balance(args, id_type, id):
             else:
                 return f"Баланс {main_data[index]['name']}: {float_to_string(main_data[index]['balance'])} слк."
     else:
-        return "Помилка: кількість аргументів повина бути менше або дорівнювати 1."
+        return "Помилка: кількість аргументів повина бути менше або дорівнювати 1-у."
 
 
 def show_inflation_rate():
