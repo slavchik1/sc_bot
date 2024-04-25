@@ -130,7 +130,7 @@ members = """Перелік всіх учасників Славкрафту:
 13. bear0re0
 14. WonderAir165649"""
 
-members_slavchik = """Один з засновників Славкрафту, головний адмін СК. Грає у Minecraft, Kerbal Space Program, Oxygen Not Included, Portal 2, Garry's mod та браузерні ігри. Не грає у Roblox. Пройшов Minecraft, Portal, Portal 2, Portal 2 coop, Aprture Tag: The Paint Gun Testing Initiative, Portal Stories: Mel, Half-life, Half-life 2, Half life 2: Lost Coast, Half life 2: Episode One, Half life 2: Episode Two, Subnautica. Созасновник телеграм каналу "Меми та й не тільки!". Засновник та головний адмін телеграм групи Союз Minecraft. Має телеграм канал: Приключения Славы (https://t.me/@Priklyucheniya_Slavy) та ютуб канал: Приключения Славы (https://youtube.com/@Priklyucheniya_Slavy). Нікнейм у майнкрафті: slavchik. Телеграм псевдонім @Ukranianball. Діскорд ім'я: slavchik__."""
+members_slavchik = """Один з засновників Славкрафту, головний адмін СК. Грає у Minecraft, Kerbal Space Program, Oxygen Not Included, Portal 2, Garry's mod та браузерні ігри. Пройшов Minecraft, Portal, Portal 2, Portal 2 coop, Aprture Tag: The Paint Gun Testing Initiative, Portal Stories: Mel, Half-life, Half-life 2, Half life 2: Lost Coast, Half life 2: Episode One, Half life 2: Episode Two, Subnautica. Созасновник телеграм каналу "Меми та й не тільки!". Засновник та головний адмін телеграм групи Союз Minecraft. Має телеграм канал: Приключения Славы (https://t.me/@Priklyucheniya_Slavy) та ютуб канал: Приключения Славы (https://youtube.com/@Priklyucheniya_Slavy). Нікнейм у майнкрафті: slavchik. Телеграм псевдонім @Ukranianball. Діскорд ім'я: slavchik__."""
 
 members_TEBSS = None
 
