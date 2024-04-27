@@ -160,7 +160,7 @@ members_bear0re0 = "я люблю ебатся с майяй"
 members_WonderAir165649 = None
 
 
-version = "Версія бота: розробка 0.2"
+version = "Версія бота: 0.2"
 
 
 flag = "Прапор Славкафту:"
