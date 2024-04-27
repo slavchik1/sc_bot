@@ -1,4 +1,4 @@
-import json                                                               #importing
+import json                                                                      #importing
 import time
 from . import config
 from . import timeinkyiv_getter
@@ -8,8 +8,23 @@ from . import timeinkyiv_getter
 main_data = json.load(open("data/data_main.json", "r"))                   #jsons loading
 helper_data = json.load(open("data/data_helper.json", "r"))
 
+                                                                                 #variables
+money = """Вітаю у грошову систему. /money це команда для взаємодій з грошовою системою. /money має багато підкоманд про яки написано нижче:
 
-def save_changes_to_json(data, Json):                                     #functions
+/money_register - зараєструватися у грошову систему
+/money_give <одержувач> <сума> - дати комусь гроші.
+/money_show_balance <людина баланс якою ви хочите дізнатися(необов'язково)> - дізнатися баланс, якщо не пишете аргумент то ви дізнаєтесь свій баланс.
+/money_show_inflationrate - показати рівень інфляції.
+/money_show_generalmoneyamount - показати загальну кільксть грошей у системі.
+
+Коли ви пишите якусь людину у аргументах команд то потрібно писати її нік у Майнкрафті акуальний для команди /members."""
+
+
+def money_register(platform_type, id):                                           #functions
+    return f"Вибачте, але поку у боті нема автоматичної реестрації. Тому для реєстрації будь ласка напишіть головному адніму для ручної реестрації. Для реєстрації потрібно указати ваш телеграм або діскорд id. Ваш {platform_type} id: {id}. Щоб отримати id на іншій платформі напишіть /register на іншій платформі."
+
+
+def save_changes_to_json(data, Json):
     json.dump(data, open(f"data/{Json}", "w"))
 
 
@@ -76,7 +91,7 @@ def show_balance(args, id_type, id):
             else:
                 return f"Баланс {main_data[index]['name']}: {float_to_string(main_data[index]['balance'])} слк."
     else:
-        return "Помилка: кількість аргументів повина бути менше або дорівнювати 1."
+        return "Помилка: кількість аргументів повина бути менше або дорівнювати 1-у."
 
 
 def show_inflation_rate():
@@ -92,6 +107,7 @@ def inflate():
             main_data[i]["balance"] *= config.inflation_rate
         save_changes_to_json(main_data, "data_main.json")
         helper_data["default_money_amount"] *= config.inflation_rate
+        helper_data["day"] = timeinkyiv_getter.get_day()
         save_changes_to_json(helper_data, "data_helper.json")
         print("Inflated!")
 
