@@ -160,9 +160,6 @@ members_bear0re0 = "я люблю ебатся с майяй"
 members_WonderAir165649 = None
 
 
-version = "Версія бота: 0.2"
-
-
 flag = "Прапор Славкафту:"
 
 flag_original = "Орігінальний прапор Славкрафту (іконка сервера):"
@@ -174,3 +171,6 @@ def timeinkyiv():
 
 def timeinkyiv_seconds():
     return f"Час у Києві: {timeinkyiv_getter.get_time()['h']}:{timeinkyiv_getter.get_time()['m']}:{timeinkyiv_getter.get_time()['s']}"
+
+
+version = "Версія бота: 0.2.1"

@@ -15,4 +15,4 @@ dsTOKEN = "<Discord token>"
 ```
 ### data
 
-Data is a folder that has files: money_main.json with empty list(```[]```) and money_helper.json with ```{"day": <current day in Kyiv>, "default_money_amount": <random int>}```. Program edits this files.
+Data is a folder that has files: money_main.json with empty list(```[]```) and money_helper.json with ```{"day": <current day in Kyiv>, "default_money_amount": <random float>}```. Program edits this files.
