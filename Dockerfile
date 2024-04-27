@@ -5,6 +5,6 @@ COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 COPY data data
 COPY images images
-COPY python_files python_files
-COPY *.py .
+COPY bot bot
+COPY main.py .
 CMD ["python3", "main.py"]

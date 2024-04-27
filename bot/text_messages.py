@@ -26,7 +26,8 @@ help_help = """Підкоманди команди /help:
 
 /help_help - підкоманди команди /help.
 /help_ip - підкоманди команди /ip.
-/help_flag - підкоманди команди /flag."""
+/help_flag - підкоманди команди /flag.
+/help_timeinkyiv - підкоманди команди /timeinkyiv."""
 
 help_ip = """Підкоманди команди /ip:
 
