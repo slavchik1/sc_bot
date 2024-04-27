@@ -7,7 +7,6 @@ from .private_config import *
 from . import text_messages
 from . import other_messages
 from . import money_system
-from . import money_system_text_messages
 from . import helper
 
 
@@ -233,7 +232,7 @@ async def timeinkyiv(ctx):
 
 @tg.message_handler(commands=["money"])
 def start(message):
-    tg.send_message(message.chat.id, money_system_text_messages.money)
+    tg.send_message(message.chat.id, money_system.money)
 
 @ds.command()
 async def money(ctx):
@@ -242,11 +241,11 @@ async def money(ctx):
 
 @tg.message_handler(commands=["money_register"])
 def start(message):
-    tg.send_message(message.chat.id, money_system_text_messages.money_register("Telegram", message.from_user.id))
+    tg.send_message(message.chat.id, money_system.money_register("Telegram", message.from_user.id))
 
 @ds.command()
 async def money_register(ctx):
-    await ctx.send(money_system_text_messages.money_register("Discord", ctx.author.id))
+    await ctx.send(money_system.money_register("Discord", ctx.author.id))
 
 
 @tg.message_handler(commands=["money_give"])

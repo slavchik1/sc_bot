@@ -1,5 +1,6 @@
 import json                                                                      #importing
 import time
+from . import helper
 from . import config
 from . import timeinkyiv_getter
 
@@ -29,7 +30,7 @@ def save_changes_to_json(data, Json):
 
 
 def float_to_string(float):
-    string = str(format(float, ".1f"))
+    string = str(float)
     if string[-2:] == ".0":
         return string[:-2]
     else:
@@ -64,12 +65,12 @@ def give_money(giver_id_type, giver_id, args):
         elif args[0] == main_data[giver_index]["name"]:
             return "Помилка: Ви неможите дати гроші собі."
         elif given_money_amount > main_data[giver_index]["balance"]:
-            return f"Помилка: не висточає {float_to_string(given_money_amount - main_data[giver_index]['balance'])} слк."
+            return f"Помилка: не вистачає {float_to_string(given_money_amount - main_data[giver_index]['balance'])} слк."
         elif given_money_amount < 0:
             return "Помилка: сума не може бути від'ємною."
         else:
-            main_data[giver_index]["balance"] -= given_money_amount
-            main_data[receiver_index]["balance"] += given_money_amount
+            main_data[giver_index]["balance"] = helper.decimal_subtraction(main_data[giver_index]["balance"], given_money_amount)
+            main_data[receiver_index]["balance"] += helper.decimal_addition(main_data[receiver_index]["balance"], given_money_amount)
             save_changes_to_json(main_data, "data_main.json")
             return f"Передано {float_to_string(given_money_amount)} слк на баланс {main_data[receiver_index]['name']}. Ваш баланс: {float_to_string(main_data[giver_index]['balance'])} слк."
     else:
@@ -104,9 +105,9 @@ def inflate():
         time.sleep(config.inflation_checking_delay)
     else:
         for i in range(len(main_data)):
-            main_data[i]["balance"] *= config.inflation_rate
+            main_data[i]["balance"] = helper.decimal_addition(main_data[i]["balance"], config.inflation_rate)
         save_changes_to_json(main_data, "data_main.json")
-        helper_data["default_money_amount"] *= config.inflation_rate
+        helper_data["default_money_amount"] *= helper.decimal_addition(helper_data["default_money_amount"], config.inflation_rate)
         helper_data["day"] = timeinkyiv_getter.get_day()
         save_changes_to_json(helper_data, "data_helper.json")
         print("Inflated!")
