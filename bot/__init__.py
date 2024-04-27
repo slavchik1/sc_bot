@@ -73,6 +73,15 @@ async def help_members(ctx):
     await ctx.send(text_messages.help_members)
 
 
+@tg.message_handler(commands=["help_timeinkyiv"])
+def start(message):
+    tg.send_message(message.chat.id, text_messages.help_timeinkyiv)
+
+@ds.command()
+async def help_timeinkyiv(ctx):
+    await ctx.send(text_messages.help_timeinkyiv)
+
+
 
 @tg.message_handler(commands=["about"])
 def start(message):
@@ -227,6 +236,15 @@ def start(message):
 @ds.command()
 async def timeinkyiv(ctx):
     await ctx.send(text_messages.timeinkyiv())
+
+
+@tg.message_handler(commands=["timeinkyiv_seconds"])
+def start(message):
+    tg.send_message(message.chat.id, text_messages.timeinkyiv_seconds())
+
+@ds.command()
+async def timeinkyiv_seconds(ctx):
+    await ctx.send(text_messages.timeinkyiv_seconds())
 
 
 

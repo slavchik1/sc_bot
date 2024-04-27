@@ -36,6 +36,10 @@ help_flag = """Підкоманди команди /flag:
 
 /flag_original - орігінальний файл прапора (іконка сервера)."""
 
+help_timeinkyiv = """Підкоманди команди /timeinkyiv:
+
+/timeinkyiv_seconds - час у києві з секундами."""
+
 help_members = """Для того щоб вийшла підкоманда /members_<ім'я граця> - це вам виведе опис гравця написаний ним же самим(нікнейм гравця для підкоманди дивися у /members). Також є список підкоманд /members:
 
 /members_slavchik - опис гравця slavchik
@@ -98,14 +102,14 @@ creative-20
 
 ip = """Ip Славкрафту:
 
-experement-701: slavcraft.somerandom.xyz
-creative-22: slavcraft.somerandom.xyz:25566
+creative-20: slavcraft.somerandom.xyz
+?: slavcraft.somerandom.xyz:25566
 creative-18: slavcraft.somerandom.xyz:25567"""
 
 ip_ip = """Ip Славкрафту як ip:
 
-experement-701: 141.95.73.17 
-creative-22: 141.95.73.17:25566
+creative-20: 141.95.73.17 
+?: 141.95.73.17:25566
 creative-18: 141.95.73.17:25567"""
 
 
@@ -165,3 +169,7 @@ flag_original = "Орігінальний прапор Славкрафту (і�
 
 def timeinkyiv():
     return f"Час у Києві: {timeinkyiv_getter.get_time()['h']}:{timeinkyiv_getter.get_time()['m']}"
+
+
+def timeinkyiv_seconds():
+    return f"Час у Києві: {timeinkyiv_getter.get_time()['h']}:{timeinkyiv_getter.get_time()['m']}:{timeinkyiv_getter.get_time()['s']}"

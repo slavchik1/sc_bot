@@ -7,7 +7,8 @@ def get_time():
     time = datetime.now(timezone.utc).astimezone(pytz.timezone("Europe/Kyiv"))
     return {
         "h": "{:02d}".format(time.hour),
-        "m": "{:02d}".format(time.minute)
+        "m": "{:02d}".format(time.minute),
+        "s": "{:02d}".format(time.second)
     }
 
 def get_day():
